@@ -1,0 +1,147 @@
+<!-- <h1>hii {{title}}</h1> -->
+<!-- <h1>{{arr.length}}</h1> -->
+<!-- {{SiteUrl}} -->
+<!-- <h1>{{ob.name}}</h1>
+<h1>{{ob.age}}</h1> -->
+
+<!-- <app-sidebar></app-sidebar> -->
+<!-- <app-login></app-login> -->
+<!-- <button (click)="getname('nisha','kk')">get my name</button> -->
+<!-- <button (click)="myevent('hii')">click me</button><br>
+<input type="text" #box (blur)="myevent(box.value)" placeholder="keyup">
+<div style="background-color: aqua; height: 50px;width: 50px;"(mouseleave)="myevent('mouse')"(onmouseover)="myevent('on')"></div>
+<input type="text" [value]="name"> -->
+<!-- <input type="text"[disabled]="disablebox"[value]="name"> 
+<input type="text" disabled="disablebox" value={{name}}>
+<button (click)="enablebox()">enable</button> -->
+<!-- <h1 *ngIf="show=='yes'; then ifblock else elseblock">
+     
+</h1>
+<ng-template #ifblock>
+    <h1>ifblock</h1>
+
+</ng-template>
+<ng-template #elseblock>
+        <h1>else block</h1>
+    </ng-template> -->
+
+    <!-- <ng-template [ngIf]="show=='yes'">
+        <h1>yes block</h1>
+
+    </ng-template>
+    <ng-template [ngIf]="show=='no'">
+        <h1>no block</h1>
+    </ng-template>
+    
+    <ng-template [ngIf]="show=='yo'">
+        <h1>yo block</h1>
+    </ng-template> -->
+    <!-- <div [ngSwitch]="color">
+        <h2 style="color:red;" *ngSwitchCase="'red'">red</h2>
+        <h2 style="color:green;" *ngSwitchCase="'green'">green</h2>
+        <h2 style="color:blue;" *ngSwitchCase="'blue'">blue</h2>
+
+    </div>
+    <h4 *ngFor="let ds of data">{{ds}}</h4>
+    <table border="1" width="100px" height="50px">
+    <tr *ngFor="let item of data1">
+        <td>{{item.name}}</td>
+        <td>{{item.age}}</td>
+    </tr>
+    </table><br><br>
+    <form #SimForm="ngForm" (ngSubmit)="getUser(SimForm.value)">
+        <input type="text" ngModel name="username" placeholder="name"><br>
+        <input type="text" ngModel name="age" placeholder="age"><br>
+        <input type="text" ngModel name="address" placeholder="add"><br>
+        <button>getuser</button>
+
+    </form> -->
+<!-- <h1 style="color:aqua">hello</h1> -->
+<!-- <h1 [style.color]="hii?'red':'green'">hello</h1>
+<button (click)="ch()">color</button> -->
+<!-- <h1 [style.backgroundColor]="'green'">hii</h1> -->
+<!-- <h1 style="background-color:yellow;">hh</h1> -->
+<!-- <div *ngFor="let data of users">
+<app-login [comp]="users"></app-login>
+</div> -->
+<!-- {{name | uppercase}}<br>
+{{name | titlecase}}<br>
+{{today | date:'fullDate'}} <br>
+{{str | slice:2:5}}
+
+{{val | currency:'CAD'}} -->
+<!-- {{data}}
+<app-child (updateDataEvent)="updateData($event)"></app-child><br><br>
+<a routerLink="user">user</a><br>
+<a routerLink="admin">admin</a><br>
+<a routerLink="about">about</a><br>
+<a routerLink="home">home</a><br>
+<router-outlet></router-outlet>
+<h2>normal text</h2>
+<h2 appCustomStyle>custom text</h2>
+{{name}}<br>
+{{age}}<br>
+{{id}}<br> -->
+<!-- <table border="2"class="d1">
+    <tr>
+        <td>id</td>
+        <td>title</td>
+        <td>userId</td>
+    </tr>
+    <tr *ngFor="let item of data">
+    <td>{{item.id}}</td>
+    <td>{{item.title}}</td>
+    <td>{{item.userId}}</td>
+    </tr>
+    
+
+</table> -->
+<!-- <router-outlet></router-outlet>
+<app-topbar></app-topbar>
+<app-sidebar></app-sidebar>
+<app-layout></app-layout> -->
+<!-- <h3>admin pages</h3> -->
+<!-- <ul>
+    <li>
+        <a routerLink="admin/login">login</a><br>
+    </li>
+    <li><a routerLink="admin/list">list</a>
+    </li>
+</ul> -->
+<!-- <h3>client pages</h3>
+<ul>
+    <li>
+        <a routerLink="client/login">login</a><br>
+    </li>
+    <li><a routerLink="client/list">list</a>
+    </li>
+</ul> -->
+
+<!-- <router-outlet></router-outlet> -->
+<!-- <form #userForm="ngForm" (ngSubmit)="onsubmit(userForm.value)">
+    <input pattern="[a-zA-Z0-9\.\_\-]+\@+[a-zA-Z0-9]+\.+[a-zA-Z]{2,3}" #email="ngModel" type="email" ngModel name="email" class="form-Control">
+    <span *ngIf="email.invalid && email.touched" class="error">email is not valid</span><br>
+    <input type="password" ngModel name="password"><br>
+    <button type="submit" >submit</button>
+</form> -->
+<!-- <form [formGroup]="loginForm"(ngSubmit)="loginUser()">
+    <input type="text" placeholder="enter email" name="email" formControlName="email"><br>
+    <span style="color:red" *ngIf="emaill && emaill.invalid && emaill.touched">not valid</span><br>
+    <input type="password" placeholder="enter password" name="password" formControlName="password"><BR><BR>
+    <button [disabled]="loginForm.invalid">click me</button>
+</form> ` -->
+<div class="Col-sm-6">
+    <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+        <div class="form-group">
+            <label for="exampleInputEmail">email</label>
+            <input type="=text" formControlName="email" class="formControl">
+            <span *ngIf="emaill.invalid && emaill.touched">email required</span>
+        </div>
+        <div class="form-group">
+            <label>password</label>
+            <input type="password" formControlName="password" class="formControl">
+        </div>
+        <button type="submit">click me</button>
+    </form>
+</div>
+
