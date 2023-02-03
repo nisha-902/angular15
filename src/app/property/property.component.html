@@ -1,0 +1,86 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <h2 style="color: aliceblue;">SB Properties</h2>
+    <div class="d-flex">
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+      (click)="clickAddProp()">add listing</button>
+      <button class="btn btn-danger mx-3">logout</button>
+    </div>
+
+  </div>
+</nav>
+<div class="p-5 mb-4 bg-light  rounded">
+  <h1 class="display-5 fw-bold">SkillBout Properties</h1>
+  <p class="com-mb-8 fs-4">You can add properties here</p>
+  <a class="btn btn-primary" type="button" target="_blank" href="https://www.youtube.com/@SkillBout">Skill Bout</a>
+
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Property title</th>
+      <th scope="col">Property Price</th>
+      <th scope="col">Property location</th>
+      <th scope="col">Property details</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of allProperty">
+      <td>{{data.id}}</td>
+      <td>{{data.ptitle}}</td>
+      <td>{{data.pprice}}</td>
+      <td>{{data.plocation}}</td>
+      <td>{{data.pdetails}}</td>
+      <!-- <td>dummy data</td>
+      <td>dummy data</td>
+      <td>dummy data</td>
+      <td>dummy data</td> -->
+      <td>
+        <button (click)="onEdit(data)"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+        <button class="btn btn-success mx-2">View</button>
+        <button (click)="deletProp(data)" class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+
+
+    
+  </tbody>
+</table>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Propert title</label>
+          <input formControlName="ptitle"type="text" class="form-control"  placeholder="ABC">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label">Property price</label>
+          <input formControlName="pprice"type="text" class="form-control"  placeholder="1234.877">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Propert location</label>
+          <input formControlName="plocation" type="text" class="form-control"  placeholder="punjab ">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label">Property details</label>
+          <input formControlName="pdetails" type="text" class="form-control"  placeholder="available">
+        </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="clear" class="btn btn-secondary" data-bs-dismiss="modal">clear</button>
+        <button type="button"  *ngIf="showAdd" (click)="addProp()" class="btn btn-primary">add listing</button>
+        <button type="button" *ngIf="showUpdate"  (click)="updatProp()"class="btn btn-warning">update </button>
+      </div>
+    </div>
+  </div>
+</div>
